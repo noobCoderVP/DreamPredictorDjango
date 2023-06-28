@@ -1,0 +1,14 @@
+{% extends 'base.html' %} {% load static %} {% block title %}
+
+<title>Contact</title>
+<link rel="stylesheet" href="/static/css/form.css" />
+
+{% endblock title %} {% block main %}
+<main class="contact-section">
+    <h2>Contact Us</h2>
+    <form method="POST" action="/contact/">
+        {% csrf_token %} {% for item in form%} {{item}} {% endfor %}
+        <button type="submit">Send</button>
+    </form>
+</main>
+{% endblock main %}

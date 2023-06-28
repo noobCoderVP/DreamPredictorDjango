@@ -1,0 +1,35 @@
+.profile {
+    display: flex;
+    padding: 1rem;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.profile img {
+    width: 300px;
+    height: 300px;
+}
+
+.profile form {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    color: red;
+    height: fit-content;
+    padding: 2rem;
+    border-radius: 10px;
+    gap: 0.25rem;
+    font-size: 1.2rem;
+}
+
+form label {
+    margin-top: 1rem;
+}
+
+form input {
+    border: 2px solid black;
+    padding: 0.3rem;
+    width: 300px;
+}
+
+/* .pri */

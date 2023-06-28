@@ -1,0 +1,14 @@
+{% extends 'base.html' %} {% load static %} {% block title %}
+
+<title>Register</title>
+<link rel="stylesheet" href="/static/css/form.css" />
+
+{% endblock title %} {% block main %}
+<main>
+    <h2>Register here</h2>
+    <form action="/register/" method="POST">
+        {% csrf_token %} {% for item in form %} {{item}} {% endfor %}
+        <button type="submit">Register</button>
+    </form>
+</main>
+{% endblock main %}

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script defer src="https://friconix.com/cdn/friconix.js"></script>
+        {% block title %} {% endblock%}
+        <link preload rel="stylesheet" href="{% static 'css/base.css'%}" />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="{% static
+        'favicon/apple-touch-icon.png' %}" />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="{% static 'favicon/favicon-32x32.png' %}" />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="{% static
+        'favicon/favicon-16x16.png' %}" />
+    </head>
+    <body>
+        <header>
+            <img src={% static 'images/logo.png'%} alt="logo of our website"
+            width="40px" />
+            <h1>DreamPredictor</h1>
+            {% if request.session.user %}
+            <span class="username">{{request.session.user}}</span>
+            {% endif %}
+
+            <a href="/register">
+                <button>Get started</button>
+            </a>
+        </header>
+
+        <div class="layout">
+            {% with request.resolver_match.url_name as url_name %}
+            <aside>
+                <ul>
+                    <a href="/">
+                        {% if url_name == "home" %}
+                        <li class="active">
+                            <i class="fi-xnsuxl-home-solid"></i>
+                            <span>Home</span>
+                        </li>
+                        {% else %}
+                        <li>
+                            <i class="fi-xnsuxl-home-solid"></i>
+                            <span>Home</span>
+                        </li>
+                        {% endif %}
+                    </a>
+                    <a href="/matches">
+                        {% if url_name == "matches" %}
+                        <li class="active">
+                            <i class="fi-xnsuxl-cup-solid"></i>
+                            <span>Matches</span>
+                        </li>
+                        {% else %}
+                        <li>
+                            <i class="fi-xnsuxl-cup-solid"></i>
+                            <span>Matches</span>
+                        </li>
+                        {% endif %}
+                    </a>
+                    <a href="/predictor">
+                        {% if url_name == "predictor" %}
+                        <li class="active">
+                            <i class="fi-xnsuhl-search"></i>
+                            <span>Predictions</span>
+                        </li>
+                        {% else %}
+                        <li>
+                            <i class="fi-xnsuhl-search"></i>
+                            <span>Predictions</span>
+                        </li>
+                        {% endif %}
+                    </a>
+                    <a href="/contact">
+                        {% if url_name == "contact" %}
+                        <li class="active">
+                            <i class="fi-xnsrxl-phone-solid"></i>
+                            <span>Contact</span>
+                        </li>
+                        {% else %}
+                        <li>
+                            <i class="fi-xnsrxl-phone-solid"></i>
+                            <span>Contact</span>
+                        </li>
+                        {% endif %}
+                    </a>
+                    <a href="/profile">
+                        {% if url_name == "profile" %}
+                        <li class="active">
+                            <i class="fi-xnsuxl-user-plus-solid"></i>
+                            <span>Profile</span>
+                        </li>
+                        {% else %}
+                        <li>
+                            <i class="fi-xnsuxl-user-plus-solid"></i>
+                            <span>Profile</span>
+                        </li>
+                        {% endif %}
+                    </a>
+                    {% if request.session.user %}
+                    <a href="/logout" class="logout">
+                        <li>
+                            <i class="fi-xwsuxl-sign-out-solid"></i>
+                            <span>LogOut</span>
+                        </li>
+                    </a>
+                    {% else %}
+                    <a href="/login" class="logout">
+                        {% if url_name == "login" %}
+                        <li class="active">
+                            <i class="fi-xwsuxl-sign-in-solid"></i>
+                            <span>Login</span>
+                        </li>
+                        {% else %}
+                        <li>
+                            <i class="fi-xwsuxl-sign-in-solid"></i>
+                            <span>Login</span>
+                        </li>
+                        {% endif %}
+                    </a>
+                    {% endif %}
+                </ul>
+            </aside>
+            {% endwith %}
+            <div class="main">
+                {%block main%} {% endblock %}
+                <footer>
+                    &copy; Copyright <span>DreamPredictor</span> Private Limited
+                    2023
+                </footer>
+            </div>
+        </div>
+    </body>
+</html>

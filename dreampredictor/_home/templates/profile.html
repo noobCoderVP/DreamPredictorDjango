@@ -1,0 +1,18 @@
+{% extends 'base.html' %} {% load static %} {% block title %}
+
+<title>Profile</title>
+<link rel="stylesheet" href="{% static 'css/profile.css' %}" />
+
+{% endblock title %} {% block main %}
+<section class="profile">
+    <img src="{% static 'images/profile.jpg' %}" alt="Profile" />
+    <form>
+        <label for="">Username</label>
+        <input type="text" value="{{username}}" disabled />
+        <label for="">Email</label>
+        <input type="email" value="{{email}}" disabled />
+        <label for="">Age</label>
+        <input type="number" value="{{age}}" disabled />
+    </form>
+</section>
+{% endblock main %}

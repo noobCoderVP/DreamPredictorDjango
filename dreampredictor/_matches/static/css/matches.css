@@ -1,0 +1,103 @@
+.team img {
+    width: 70px;
+    height: 70px;
+}
+
+.date {
+    background-color: orange;
+    color: whitesmoke;
+    width: max-content;
+    padding: 8px;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+section {
+    padding: 1rem;
+    margin: 1rem auto;
+}
+
+section:nth-of-type(2n) {
+    background-color: rgba(255, 123, 123, 0.6);
+}
+
+section:nth-of-type(2n + 1) {
+    background-color: rgb(255, 255, 255, 0.6);
+}
+
+main h1 {
+    background-color: aqua;
+    color: black;
+    width: max-content;
+    padding: 0.5rem;
+    font-family: "Times New Roman", Times, serif;
+}
+
+.versus {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.team {
+    background-color: black;
+    color: white;
+    padding: 0.5rem;
+}
+
+.team h3 {
+    margin: 0px;
+    text-align: center;
+}
+
+.venue {
+    background-color: blue;
+    color: white;
+    max-width: max-content;
+    padding: 0.25rem;
+}
+
+.ongoing {
+    background-color: yellow;
+    color: white;
+    padding: 0.25rem;
+    box-shadow: 2px 2px 5px 0px white;
+    font-weight: bold;
+    max-width: max-content;
+}
+
+.past {
+    background-color: red;
+    color: white;
+    padding: 0.25rem;
+    box-shadow: 2px 2px 5px 0px white;
+    font-weight: bold;
+    max-width: max-content;
+}
+
+.upcoming {
+    background-color: green;
+    color: white;
+    padding: 0.25rem;
+    box-shadow: 2px 2px 5px 0px white;
+    font-weight: bold;
+    max-width: max-content;
+}
+
+.match a {
+    display: block;
+    width: fit-content;
+    font-weight: bolder;
+    padding: 0.3rem;
+    font-size: 1.2rem;
+    text-decoration: none;
+    background-color: black;
+    color: aqua;
+    margin-bottom: 1rem;
+}
+
+.mid {
+    background-color: black;
+    color: bisque;
+    padding: 0.2rem;
+    width: max-content;
+}

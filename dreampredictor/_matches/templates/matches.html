@@ -1,0 +1,36 @@
+{% extends 'base.html' %} {% load static %} {% block title %}
+
+<title>Matches</title>
+<link rel="stylesheet" href="/static/css/matches.css" />
+
+{% endblock title %} {% block main %}
+<main>
+    <h1>Indian Premier League 2023</h1>
+    {% for match in matches %}
+    <section class="match">
+        <div class="mid">{{match.id}}</div>
+        <div class="date">{{match.date}}</div>
+        <h2>{{match.name}}</h2>
+        <div class="versus">
+            {% for team in match.teamInfo %}
+            <div class="team">
+                <h3>{{team.shortname}}</h3>
+                <img src="{{team.img}}" alt="team logo" width="40px" />
+            </div>
+            {% endfor %}
+        </div>
+        {% if match.matchStarted == True and match.matchEnded == True%}
+        <p class="past"><span>{{match.status}}</span></p>
+
+        {% elif match.matchStarted == False and match.matchEnded == False%}
+        <p class="upcoming"><span>{{match.status}}</span></p>
+
+        {% else %}
+        <p class="ongoing"><span>{{match.status}}</span></p>
+        {% endif %}
+        <p class="venue">Venue: <span>{{match.venue}}</span></p>
+        <a href="/predictor?id={{match.id}}">Get predictions</a>
+    </section>
+    {% endfor %}
+</main>
+{% endblock main %}

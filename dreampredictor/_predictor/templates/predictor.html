@@ -1,0 +1,18 @@
+{% extends 'base.html' %} {% load static %} {% block title %}
+
+<title>Predictor</title>
+<link rel="stylesheet" href="{% static 'css/predictor.css' %}" />
+
+{% endblock title %} {% block main %}
+<form action="/predictor" method="GET">
+    <input type="text" name="id" />
+    <button type="submit">Search</button>
+</form>
+<section class="pred">
+    {% if predictions|length != 0%} {% for p in predictions %}
+    <div class="row">
+        <span>{{p.SR}}</span><span>{{p.name}}</span><span>{{p.score}}</span>
+    </div>
+    {% endfor %} {% endif %}
+</section>
+{% endblock main %}

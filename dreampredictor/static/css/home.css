@@ -1,0 +1,91 @@
+/* home */
+section img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+}
+@keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+section:first-of-type {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1rem;
+    align-items: center;
+    margin-top: 1rem;
+    color: black;
+}
+section div {
+    background-color: rgba(240, 128, 128, 0.85);
+    padding: 1rem;
+    border-radius: 5px;
+}
+section h3 {
+    font-family: "andika";
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 1rem 0rem;
+}
+section p {
+    letter-spacing: 0.06rem;
+    word-spacing: 0.2rem;
+}
+section p::first-letter {
+    font-family: "times new roman";
+    font-size: 2rem;
+    font-weight: bold;
+}
+.about {
+    background-color: rgba(0, 0, 0, 0.608);
+    display: block;
+    color: aliceblue;
+    padding: 1rem;
+    margin-top: 100px;
+}
+
+/* cards */
+.cards {
+    display: flex;
+    justify-content: space-evenly;
+}
+.cards div {
+    width: 200px;
+    background-color: aliceblue;
+}
+.cards div h3 {
+    color: brown;
+}
+
+.statistics {
+    margin-top: 100px;
+}
+
+.newcards {
+    background-color: transparent;
+}
+
+.statistics > div {
+    background-color: transparent;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.statistics > div div {
+    background-color: grey;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 150px;
+    height: 150px;
+}
+
+.statistics > div div span {
+    font-size: 2rem;
+}
